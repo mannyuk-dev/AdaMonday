@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>         // std::string
+#include <stdio.h>
+#include <ctype.h>
+
+
+// https://repl.it/@mannydev/ex9#main.cpp
+
+using namespace std;
+
+
+void question() {
+
+  char input;
+
+  cout << "Please enter a character?! ";
+  cin >> input;
+
+  if (isalpha(input)) {
+    cout << "Alphabetic character detected\n";
+  } else if (isdigit(input)) {
+    cout << "Digit  character detected\n";
+  } else {
+    cout << "Special character detected\n";
+  } 
+
+}
+
+int main() {
+    char input;
+
+    question();
+
+    string message = "Try again (Y/N) ";
+    cout << message;
+    cin >> input;
+    
+    while (input == 'Y') {
+    if ( input == 'Y' )  {
+        question();
+        cout << message;
+        cin >> input;
+    }
+    }
+    if ( input == 'N')  {
+        cout << "Thank you, goodbye!";
+    }
+}
+
